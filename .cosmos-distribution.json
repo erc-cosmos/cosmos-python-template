@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "numba": ">=0.68.0,<0.69",
+    "numpy": ">=2.5.3,<2.6",
+    "pandas": ">=3.0.6,<3.1",
+    "python": "3.14.*",
+    "pytorch": {
+      "build": "cpu*",
+      "version": ">=2.13.0,<3"
+    },
+    "scikit-learn": ">=1.9.1,<2",
+    "scipy": ">=1.18.1,<2"
+  },
+  "lock_sha256": "408a14f3db82181020b51ca139874bf95e54b74c6bf4f6732013addbb2300897",
+  "manifest_sha256": "f99f17a8d28f1b6303d1dd6bfcb0d77714c8fb82f68add98fe476ef5574cfbc1",
+  "schema": 1,
+  "source": "https://github.com/erc-cosmos/cosmos-python"
+}

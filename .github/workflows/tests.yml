@@ -1,0 +1,32 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-15, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install (Mac/Linux)
+        if: runner.os != 'Windows'
+        run: bash install.sh
+      - name: Install (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./install.ps1
+      - name: Test (Mac/Linux)
+        if: runner.os != 'Windows'
+        run: |
+          bash cosmos.sh run test
+          bash cosmos.sh run python tests/scientific_smoke.py
+      - name: Test (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./cosmos.ps1 run test
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./cosmos.ps1 run python tests/scientific_smoke.py

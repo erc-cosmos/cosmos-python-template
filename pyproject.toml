@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=77,<82"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cosmos-student-project"
+version = "0.1.0"
+description = "An undergraduate Python project using COSMOS Python"
+requires-python = ">=3.14,<3.15"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
