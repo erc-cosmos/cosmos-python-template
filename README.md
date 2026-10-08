@@ -42,7 +42,8 @@ Repeat the activation command in each new terminal. See
 - Edit `src/project/main.py` and add code under `src/project/`.
 - Add tests under `tests/` and notes under `docs/`.
 - Run a separate script with `pixi run --locked python path/to/script.py`.
-- Keep notebooks in `notebooks/`; see its README to install notebook tools.
+- Use marimo notebooks in `notebooks/`; see the [notebook instructions](notebooks/README.md)
+  to install marimo and open the example.
 
 ## Add a package
 
