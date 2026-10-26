@@ -15,7 +15,3 @@ __marimo__/
 .DS_Store
 build/
 dist/
-data/*
-!data/README.md
-results/*
-!results/README.md
