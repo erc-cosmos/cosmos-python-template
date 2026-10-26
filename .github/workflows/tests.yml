@@ -1,9 +1,18 @@
 name: Tests
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   test:
+    # This repository is a template, and files are copied verbatim into every
+    # repository generated from it: there is no supported way to leave a file
+    # behind. Without this condition, each student push would provision four
+    # GitHub-hosted runners. Runs here only.
+    if: github.repository == 'erc-cosmos/cosmos-python-template'
     strategy:
       fail-fast: false
       matrix:
