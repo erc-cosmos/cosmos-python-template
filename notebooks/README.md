@@ -6,9 +6,11 @@ code. When you change a cell or a control, marimo reruns the cells that depend o
 
 Run the commands below from the repository root.
 
-## Install marimo once per project
+## Set up the environment
 
-First install and activate the project environment:
+marimo comes with this project. `pixi.toml` declares it and `pixi.lock` pins the
+exact version, so you and your collaborators get the same one without installing
+anything extra. Install and activate the project environment:
 
 ```sh
 bash install.sh
@@ -22,15 +24,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 . .\activate.ps1
 ```
 
-Add marimo to the project's Pixi environment:
-
-```sh
-pixi add marimo
-```
-
-This updates `pixi.toml` and `pixi.lock`. Commit both files so collaborators get
-the same marimo version when they run the installation script. No Jupyter or
-ipykernel installation is needed. Repeat the activation command in new terminals.
+No Jupyter or ipykernel installation is needed. Repeat the activation command in
+new terminals.
 
 ## Open the example
 
